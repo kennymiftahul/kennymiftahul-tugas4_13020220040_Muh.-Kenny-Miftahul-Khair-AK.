@@ -1,0 +1,41 @@
+// Source code is decompiled from a .class file using FernFlower decompiler.
+import java.io.PrintStream;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Scanner;
+
+public class hashMapp {
+   public hashMapp() {
+   }
+
+   public static void main(String[] var0) {
+      Scanner var1 = new Scanner(System.in);
+      HashMap var2 = new HashMap();
+      System.out.println("Masukkan pasangan kunci-nilai ke dalam HashMap (ketik 'selesai' untuk mengakhiri):");
+
+      while(true) {
+         System.out.print("Masukkan kunci: ");
+         String var3 = var1.nextLine();
+         if (var3.equals("selesai")) {
+            System.out.println("\nIsi HashMap:");
+            Iterator var5 = var2.entrySet().iterator();
+
+            while(var5.hasNext()) {
+               Map.Entry var6 = (Map.Entry)var5.next();
+               PrintStream var10000 = System.out;
+               String var10001 = (String)var6.getKey();
+               var10000.println("Kunci: " + var10001 + ", Nilai: " + String.valueOf(var6.getValue()));
+            }
+
+            var1.close();
+            return;
+         }
+
+         System.out.print("Masukkan nilai: ");
+         int var4 = var1.nextInt();
+         var1.nextLine();
+         var2.put(var3, var4);
+      }
+   }
+}

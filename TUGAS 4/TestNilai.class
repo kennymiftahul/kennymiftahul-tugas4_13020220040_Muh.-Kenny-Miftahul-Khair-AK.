@@ -1,0 +1,37 @@
+// Source code is decompiled from a .class file using FernFlower decompiler.
+import java.io.PrintStream;
+import java.util.Scanner;
+
+public class TestNilai {
+   public TestNilai() {
+   }
+
+   public static void main(String[] var0) {
+      HitungRata var1 = new HitungRata();
+      Scanner var2 = new Scanner(System.in);
+      System.out.print("Masukkan Jumlah Data : ");
+      int var3 = var2.nextInt();
+      int[] var4 = new int[var3];
+      System.out.println("1. Input Nilai ");
+      System.out.println("2. Input Nilai Baru");
+      System.out.print("Masukkan Pilihan : ");
+      int var5 = var2.nextInt();
+      switch (var5) {
+         case 1:
+            System.out.print("Masukkan Nilai : ");
+            var1.inputNilai(var4);
+            System.out.println("Daftar Nilai : ");
+            var1.cetakNilai(var4);
+            PrintStream var10000 = System.out;
+            double var10001 = var1.rataNilai(var3);
+            var10000.println("Rata Nilai : " + var10001);
+            break;
+         case 2:
+            System.out.print("Masukkan Nilai Baru: ");
+            var1.inputNilaiBaru(var3);
+            System.out.print("Daftar Nilai Baru : ");
+            var1.cetakNilaiBaru();
+      }
+
+   }
+}
